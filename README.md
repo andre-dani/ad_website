@@ -1,18 +1,4 @@
-# ad_website
+# THIS IS A README FILE
 
-## Projects
-### Project 1
-- Description
-- Links
-- 
-- ### Project 2
-- Description
-- Links
-
-- ### Project 3
-- Description
-- Links
-
-- ### Project 4
-- Description
-- Links
+## Tasks:
+- read it please!
