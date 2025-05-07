@@ -122,5 +122,26 @@
         </div>
         <div class="footer">andredani.com</div>
     </div>
+    <script>
+    let currentIndex = 0;
+
+    const images = [
+        'images/image1.jpg',
+        'images/image2.jpg',
+        'images/image3.jpg'
+    ];
+
+    // Function to change the image
+    function changeImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        document.querySelector('.slideshow-container img').src = images[currentIndex];
+    }
+
+    // Set up the click event for the background
+    document.querySelector('.slideshow-container').addEventListener('click', changeImage);
+
+    // Set up auto-change every 2 seconds (2000 milliseconds)
+    setInterval(changeImage, 2000);
+</script>
 </body>
 </html>
