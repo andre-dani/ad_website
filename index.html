@@ -1,147 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andre Dani</title>
-    <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html, body {
-            width: 100%;
-            height: 100%;
-            font-family: "Archivo", Arial, sans-serif;
-            background: black;
-            color: white;
-            overflow: hidden;
-        }
-
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .slideshow-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .slideshow-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            animation: fade 10s infinite;
-        }
-
-        @keyframes fade {
-            0% { opacity: 1; }
-            33% { opacity: 0; }
-            66% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        .content {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 20px;
-        }
-
-        .bio {
-            font-size: 23pt;
-            max-width: 300px;
-        }
-
-        .contact {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-
-        .contact a {
-            font-size: 18pt;
-            color: white;
-            text-decoration: none;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
-
-        .contact a:hover {
-            background: white;
-            color: black;
-        }
-
-        .footer {
-            text-align: center;
-            font-size: 150pt;
-            font-weight: bold;
-        }
-
-        @media (max-width: 768px) {
-            .footer {
-                font-size: 100pt;
-            }
-
-            .bio {
-                font-size: 18pt;
-            }
-
-            .contact a {
-                font-size: 14pt;
-                padding: 8px 16px;
-            }
-        }
-
-    </style>
-</head>
-<body>
-    <div class="slideshow-container">
-        <img src="https://images.squarespace-cdn.com/content/v1/607f89e638219e13eee71b1e/1684821560422-SD5V37BAG28BURTLIXUQ/michael-sum-LEpfefQf4rU-unsplash.jpg" alt="Cat Placeholder">
-    </div>
-    <div class="content">
-        <div class="bio">
-            I am a passionate brand designer with over a decade of experience, blending conceptual strategy and hands-on execution to build authentic brands that inspire positive change. An advocate for sustainability, human rights, and diversity, I thrive on collaborating with like-minded teams to create meaningful impact.
-        </div>
-        <div class="contact">
-            <a href="mailto:yourname@example.com">GET IN TOUCH</a>
-        </div>
-        <div class="footer">andredani.com</div>
-    </div>
-    <script>
-    let currentIndex = 0;
-
-    const images = [
-        'images/image1.jpg',
-        'images/image2.jpg',
-        'images/image3.jpg'
-    ];
-
-    // Function to change the image
-    function changeImage() {
-        currentIndex = (currentIndex + 1) % images.length;
-        document.querySelector('.slideshow-container img').src = images[currentIndex];
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Andre Dani</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    // Set up the click event for the background
-    document.querySelector('.slideshow-container').addEventListener('click', changeImage);
+    html, body {
+      width: 100%;
+      height: 100%;
+      font-family: "Archivo", Arial, sans-serif;
+      background: black;
+      color: white;
+      overflow: hidden;
+    }
 
-    // Set up auto-change every 2 seconds (2000 milliseconds)
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slideshow-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .slideshow-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .content {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px;
+    }
+
+    .bio {
+      font-size: 23pt;
+      max-width: 300px;
+    }
+
+    .contact {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+
+    .contact a {
+      font-size: 18pt;
+      color: white;
+      text-decoration: none;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+    }
+
+    .contact a:hover {
+      background: white;
+      color: black;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 150pt;
+      font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      .footer {
+        font-size: 100pt;
+      }
+
+      .bio {
+        font-size: 18pt;
+      }
+
+      .contact a {
+        font-size: 14pt;
+        padding: 8px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow-container" onclick="changeImage()">
+    <img id="slideshow" src="images/image1.jpg" alt="Background Slideshow" />
+  </div>
+
+  <div class="content">
+    <div class="bio">
+      I am a passionate brand designer with over a decade of experience, blending conceptual strategy and hands-on execution to build authentic brands that inspire positive change. An advocate for sustainability, human rights, and diversity, I thrive on collaborating with like-minded teams to create meaningful impact.
+    </div>
+    <div class="contact">
+      <a href="mailto:yourname@example.com">GET IN TOUCH</a>
+    </div>
+<<<<<<< HEAD
+    <div class="footer">andredani.com</div>
+  </div>
+
+  <script>
+    const images = [
+      'images/image1.jpg',
+      'images/image2.jpg',
+      'images/image3.jpg',
+      'images/image4.jpg',
+      'images/image5.jpg',
+      'images/image6.jpg'
+    ];
+
+    let currentIndex = 0;
+    const slideshow = document.getElementById('slideshow');
+
+    function changeImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      slideshow.src = images[currentIndex];
+    }
+
+    // Auto-change every 2 seconds
     setInterval(changeImage, 2000);
-</script>
+  </script>
 </body>
 </html>
