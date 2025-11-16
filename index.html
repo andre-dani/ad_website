@@ -113,29 +113,20 @@
     <div class="footer">andredani.com</div>
   </div>
 
-  <script>
-    const images = [
-      "images/image1.jpg",
-      "images/image2.jpg",
-      "images/image3.jpg",
-      "images/image4.jpg",
-      "images/image5.jpg",
-      "images/image6.jpg"
-    ];
+<body>
+<!-- Replace 'your-background.gif' with your GIF file name -->
+<img src="your-background.gif" class="background" alt="Background GIF" />
 
-    let currentIndex = 0;
-    const slideImage = document.getElementById("slide-image");
 
-    function changeImage() {
-      currentIndex = (currentIndex + 1) % images.length;
-      slideImage.src = images[currentIndex];
-    }
+<div class="container">
+<h1>YOUR FAVORITE CREATIVE</h1>
 
-    // Auto change every 2 seconds
-    setInterval(changeImage, 2000);
 
-    // Also change on click
-    document.getElementById("slideshow").addEventListener("click", changeImage);
-  </script>
+<div class="side-text">
+I am a passionate brand designer with over a decade of experience, blending conceptual strategy and hands-on execution to build authentic brands that inspire positive change. An advocate for sustainability, human rights, and diversity, I thrive on collaborating with like-minded teams to create meaningful impact.
+<a href="mailto:hi@andredani.com" class="contact-btn">GET IN TOUCH</a>
+</div>
+</div>
+</body>
 </body>
 </html>
